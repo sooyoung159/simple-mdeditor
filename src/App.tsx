@@ -1,12 +1,21 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
+import Editor from "./components/editor/Editor";
+import MainLayout from "./components/mainLayout/MainLayout";
+import Preview from "./components/preview/preview";
+import MarkDownProvider from "./provider/MarkdownProvider";
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  return <>왜안되노</>;
+  return (
+    <MarkDownProvider>
+      <MainLayout>
+        <MainLayout.Column>
+          <Editor />
+        </MainLayout.Column>
+        <MainLayout.Column>
+          <Preview />
+        </MainLayout.Column>
+      </MainLayout>
+    </MarkDownProvider>
+  );
 }
 
 export default App;
